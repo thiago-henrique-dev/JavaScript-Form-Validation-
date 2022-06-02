@@ -27,7 +27,31 @@ function isValidEmail(email) {
 //Event listeners
 form.addEventListener('submit', function (e) {
     e.preventDefault()
+    if (username.value === '') {
+        showError(username, 'Username is required')
+    } else {
+        showSucess(username)
+    }
+    if (email.value === '') {
+        showError(email, 'Email is required')
+
+    } else if (isValidEmail(email.value)){
+        showError(email, 'Email is not valid')
+
+    } else {
+        showSucess(email)
+    }
     
+    if (password.value === '') {
+        showError(password, 'Password is required')
+    } else {
+        showSucess(password)
+    }
+    if (password2.value === '') {
+        showError(password2, 'Confirm passowrd is required')
+    } else {
+        showSucess(password2)
+    }
 
 })
 
